@@ -1,3 +1,7 @@
+/* Import the fonts and Font Awesome icons from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Merriweather&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+
 :root {
   --primary-color: #00aaff; /* Blue shade for call-to-action elements */
   --secondary-color: #708090; /* Slate grey for accents */
@@ -8,10 +12,6 @@
   --link-hover-color: #367588; /* Teal blue for link hover state */
   --border-radius: 15px; /* Added variable for consistent border radius */
 }
-
-/* Import the fonts and Font Awesome icons from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Merriweather&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
 
 /* Basic reset and box-sizing */
 *, *::before, *::after {
@@ -78,11 +78,13 @@ nav {
 }
 
 .nav-visible {
-  display: flex;
+  display: flex !important; /* Override any previous 'display' setting */
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0; /* Align left */
+  transform: none; /* Remove transformation */
+  width: 100%; /* Full width */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 /* Profile image in navigation styles */
@@ -120,6 +122,45 @@ nav a {
 
 nav a:hover {
   color: var(--link-hover-color);
+}
+
+.nav-name-link {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.nav-name-link:hover {
+  text-decoration: underline;
+}
+
+/* Add to your existing CSS */
+.nav-profile-section {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.nav-name-link {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.nav-name-link:hover {
+  text-decoration: underline;
+}
+
+/* Modify your existing .nav-profile-image-link and .nav-profile-image if necessary */
+.nav-profile-image-link {
+  margin: 0;
+}
+
+.nav-profile-image {
+  /* No changes if you're happy with the current styling */
 }
 
 .sticky {
@@ -176,21 +217,6 @@ article {
   color: black;
   padding: 1rem;
   margin-bottom: 1rem;
-}
-
-/* Responsive design for smaller devices */
-@media (max-width: 768px) {
-  .profile-image, .sticky-profile-image {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .profile-image, .sticky-profile-image {
-    width: 40px;
-    height: 40px;
-  }
 }
 
 /* Contact Form Enhancements */
@@ -268,17 +294,7 @@ button[type="submit"] i {
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  form {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .form-row {
-    flex-direction: column;
-  }
-}
-
+/* Project Entries */
 .project-entry {
   display: flex;
   align-items: center; /* Aligns the logo with the project description */
@@ -293,4 +309,149 @@ button[type="submit"] i {
 .project-info {
   flex-grow: 1; /* Ensures the description takes the remaining space */
 }
+
+/* Font Awesome icons display */
+.navbar-social-links a {
+  color: white;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+/* Responsive design adjustments for mobile devices */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  .profile-image, .sticky-profile-image {
+    width: 40px; /* Unified size for both states */
+    height: 40px;
+  }
+
+  nav {
+    width: 100%; /* Nav takes full width */
+  }
+
+  .nav-visible {
+    display: flex !important; /* Ensure nav is visible when scrolled */
+  }
+
+  .nav-profile-image {
+    width: 80px; /* Adjust size for mobile */
+    height: 80px;
+  }
+
+  .nav-name-link {
+    display: none; /* Hide name on mobile */
+  }
+
+  nav ul li {
+    padding: 0.5rem; /* Smaller padding on mobile */
+  }
+
+  nav ul li a {
+    font-size: 0.9rem; /* Smaller font size on mobile */
+  }
+
+  .navbar-social-links a {
+    font-size: 1.5rem; /* Adjust social icons size on mobile */
+    padding: 0 5px; /* Adjust padding */
+  }
+}
+
+/* Specific adjustments for iPhone 12 Pro and similar sized devices */
+@media (max-width: 390px) {
+  .nav-profile-image {
+    width: 50px; /* Smaller size for smaller phones */
+    height: 50px;
+  }
+
+  nav {
+    padding: 0.2rem; /* Smaller padding for smaller phones */
+  }
+
+  .navbar-social-links a {
+    font-size: 1.2rem; /* Smaller icon size for smaller phones */
+    padding: 0 3px; /* Adjust padding */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 390px) {
+  .nav-profile-image {
+    width: 25px; /* Smaller width for the profile image */
+    height: 25px; /* Smaller height for the profile image */
+  }
+
+  .nav-name-link {
+    display: none; /* Hide the name on very small screens */
+  }
+
+  nav ul li a {
+    padding: 8px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .navbar-social-links a {
+    font-size: 16px; /* Smaller font size for the icons */
+    padding: 0 4px; /* Less padding */
+  }
+}
+
+/* Adjustments for different iPhone orientations */
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 428px) {
+  /* Add specific styles for portrait or landscape if necessary */
+}
+
+/* Media query for devices larger than 768px and up to iPad Pro's 1366px */
+@media only screen 
+  and (min-width: 769px) 
+  and (max-width: 1366px) {
+  body {
+    /* No changes required here since you've already set max-width to 800px */
+  }
+
+  nav, .sticky, .nav-visible {
+    width: 800px; /* Set the width of the navbar to match the body */
+    left: 50%; /* Center align the navbar */
+    transform: translateX(-50%); /* Use translateX to correctly center the navbar */
+    position: fixed; /* Changed from sticky to fixed to match .nav-visible */
+  }
+
+  /* Center the main content as well */
+  header, main, footer {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Media query for devices larger than iPad Pro (Desktops) */
+@media only screen and (min-width: 1367px) {
+  nav, .sticky {
+    /* These styles will force the nav to have a max-width and be centered */
+    width: 800px; /* Match the max-width of the body */
+    left: 50%; /* Center the navigation bar */
+    transform: translateX(-50%); /* Correctly center the navigation bar */
+    position: fixed; /* or 'sticky' depending on your preference */
+  }
+  
+  .nav-visible {
+    display: flex; /* Make sure the navigation is visible when it has the .nav-visible class */
+    position: sticky; /* 'sticky' will make it stick to the top during scroll */
+    top: 0;
+    left: auto; /* Remove the left positioning to allow the browser to position it based on the 'width' */
+    transform: none; /* Remove the transform since we are not centering it manually */
+  }
+  
+  /* If you have a wrapper around your content you can set its max width here to match the nav */
+  .content-wrapper {
+    max-width: 800px; /* The max-width should match your nav width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
