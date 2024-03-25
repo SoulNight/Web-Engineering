@@ -31,6 +31,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   max-width: 800px; /* Center the content */
   padding-top: 60px; /* Add space for the sticky navbar */
+  padding-left: 1rem; /* Add padding to prevent content from touching the sides */
+  padding-right: 1rem; /* Add padding to prevent content from touching the sides */
+  box-sizing: border-box; /* Make sure padding is included in width */
 }
 
 /* Header styles */
@@ -42,6 +45,10 @@ header {
   position: relative;
   transition: all 0.3s ease-in-out;
   border-radius: var(--border-radius); /* Use the border-radius variable */
+  margin-left: auto; /* Center the header */
+  margin-right: auto; /* Center the header */
+  max-width: calc(800px - 2rem); /* Account for padding */
+  box-sizing: border-box; /* Make sure padding is included in width */
 }
 
 /* Profile image inside header */
@@ -60,30 +67,32 @@ header {
 
 /* Navigation styles */
 nav {
-  margin-top: .5rem;
-  background-color: var(--header-background-color);
+  margin-top: .5rem; /* Add a top margin to create space above the nav bar */
   padding: 0.5rem 1rem;
-  display: none;
+  background-color: var(--header-background-color);
+  display: none; /* hidden by default, shown when .nav-visible is active */
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
   transition: all 0.3s ease-in-out;
-  width: 800px;
+  width: calc(100% - 2rem); /* Adjust for padding */
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   border-radius: var(--border-radius);
 }
 
+/* Ensure nav stays fixed and full width when visible */
 .nav-visible {
-  display: flex !important; /* Override any previous 'display' setting */
+  top: .5rem; /* Position the nav 1rem from the top when it's visible */
+  display: flex;
   position: fixed;
   top: 0;
-  left: 0; /* Align left */
-  transform: none; /* Remove transformation */
-  width: 100%; /* Full width */
+  left: 1rem; /* Adjust for padding */
+  right: 1rem; /* Adjust for padding */
+  width: auto; /* Auto width to adjust for left/right */
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
@@ -157,10 +166,6 @@ nav a:hover {
 /* Modify your existing .nav-profile-image-link and .nav-profile-image if necessary */
 .nav-profile-image-link {
   margin: 0;
-}
-
-.nav-profile-image {
-  /* No changes if you're happy with the current styling */
 }
 
 .sticky {
@@ -321,6 +326,9 @@ button[type="submit"] i {
 @media (max-width: 768px) {
   body {
     max-width: 100%;
+    padding-left: 1rem; /* Add padding for smaller devices */
+    padding-right: 1rem; /* Add padding for smaller devices */
+    width: auto;
   }
 
   .profile-image, .sticky-profile-image {
