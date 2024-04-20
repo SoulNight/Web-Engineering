@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Chapman University
 
 CPSC 453 - Web Engineering
