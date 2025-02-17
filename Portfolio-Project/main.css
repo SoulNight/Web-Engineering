@@ -163,6 +163,26 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.award-entry {
+  background: #fff;
+  padding: 8px 14px; /* Slightly increase padding for better spacing */
+  margin-bottom: 6px; /* Keep space between entries consistent */
+  border-radius: 12px; /* Maintain rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.award-entry h3 {
+  margin-top: 4px; /* Small top space */
+  margin-bottom: 3px; /* Small bottom space */
+}
+
+.award-entry p {
+  margin-top: 3px;
+  margin-bottom: 6px; /* Give some breathing space */
+}
+
+
 /* Modify your existing .nav-profile-image-link and .nav-profile-image if necessary */
 .nav-profile-image-link {
   margin: 0;
@@ -314,6 +334,8 @@ button[type="submit"] i {
 .project-info {
   flex-grow: 1; /* Ensures the description takes the remaining space */
 }
+
+
 
 /* Font Awesome icons display */
 .navbar-social-links a {
