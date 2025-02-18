@@ -144,7 +144,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Add to your existing CSS */
 .nav-profile-section {
   display: flex;
   align-items: center;
@@ -336,7 +335,6 @@ button[type="submit"] i {
 }
 
 
-
 /* Font Awesome icons display */
 .navbar-social-links a {
   color: white;
@@ -381,6 +379,10 @@ button[type="submit"] i {
 
   nav ul li a {
     font-size: 0.9rem; /* Smaller font size on mobile */
+  }
+
+  .navbar-social-links {
+    display: none; /* Hide icons on smaller screens */
   }
 
   .navbar-social-links a {
