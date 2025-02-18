@@ -482,7 +482,6 @@ button[type="submit"] i {
     margin-right: auto;
   }
 }
-
 /* Fix Navbar Overflow on iPhone SE (375px width) */
 @media (max-width: 375px) {
   nav {
@@ -522,6 +521,10 @@ button[type="submit"] i {
     display: none; /* Hide social icons for compact layout */
   }
 
+  .nav-name-link {
+    display: none; /* Hide name in portrait mode */
+  }
+
   .nav-visible {
     padding: 0.3rem; /* Reduce padding */
     max-width: 100%; /* Ensure full width */
@@ -529,4 +532,12 @@ button[type="submit"] i {
   }
 }
 
-
+/* Show name when in landscape mode (e.g., iPhone SE sideways) */
+@media (max-width: 812px) and (orientation: landscape) {
+  .nav-name-link {
+    display: block !important; /* Show in landscape mode */
+    font-size: 1rem; /* Adjust font size */
+    margin-left: 10px; /* Add spacing */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+}
