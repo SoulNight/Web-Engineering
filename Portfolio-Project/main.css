@@ -483,4 +483,50 @@ button[type="submit"] i {
   }
 }
 
+/* Fix Navbar Overflow on iPhone SE (375px width) */
+@media (max-width: 375px) {
+  nav {
+    max-width: 100%; /* Ensure nav stays within screen */
+    padding: 0.3rem; /* Keep compact */
+    overflow: hidden; /* Prevent horizontal scrolling */
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent text wrapping */
+    justify-content: space-between; /* Distribute items evenly */
+    gap: 0.2rem; /* Reduce space */
+    padding: 0;
+    width: 100%; /* Ensure it fits the screen */
+  }
+
+  nav ul li {
+    flex-grow: 1; /* Adjust dynamically */
+    text-align: center;
+    padding: 0.1rem 0.3rem; /* Reduce padding slightly */
+  }
+
+  nav ul li a {
+    font-size: 0.75rem; /* Slightly smaller text */
+    letter-spacing: -0.2px; /* Reduce letter spacing */
+    padding: 0.2rem; /* Adjust padding */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  .nav-profile-image {
+    width: 28px; /* Slightly smaller profile picture */
+    height: 28px;
+  }
+
+  .navbar-social-links {
+    display: none; /* Hide social icons for compact layout */
+  }
+
+  .nav-visible {
+    padding: 0.3rem; /* Reduce padding */
+    max-width: 100%; /* Ensure full width */
+    overflow: hidden; /* Prevent extra width */
+  }
+}
+
 
